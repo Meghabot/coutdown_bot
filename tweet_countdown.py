@@ -1,6 +1,7 @@
 import os
 import tweepy
 import datetime
+import pytz  # Make sure to install pytz via pip
 
 # Authenticate to Twitter
 api_key = os.getenv("API_KEY")
@@ -13,8 +14,8 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 def days_until_release():
-    release_date = datetime.datetime(2024, 12, 6)
-    today = datetime.datetime.now()
+    release_date = datetime.datetime(2024, 12, 6, tzinfo=pytz.UTC)
+    today = datetime.datetime.now(pytz.UTC)
     countdown_days = (release_date - today).days
     return countdown_days
 
@@ -28,7 +29,7 @@ def post_tweet():
     except tweepy.TweepyException as e:
         print(f"Error during posting: {e}")
 
-now = datetime.datetime.now()
+now = datetime.datetime.now(pytz.UTC)
 if now.hour == 0 and now.minute == 0:
     post_tweet()
 else:
