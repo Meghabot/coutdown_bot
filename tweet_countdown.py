@@ -29,6 +29,7 @@ def post_tweet():
     except tweepy.TweepyException as e:
         print(f"Error during posting: {e}")
 
+
 now = datetime.datetime.now(pytz.UTC)
 if now.hour == 0 and now.minute == 0:
     post_tweet()
