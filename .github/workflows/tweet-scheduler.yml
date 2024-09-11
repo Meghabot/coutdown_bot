@@ -3,7 +3,7 @@ name: Daily Tweet
 on:
   schedule:
     - cron: '0 0 * * *' # This schedules the workflow to run daily at midnight UTC
-  workflow_dispatch: # Add this to enable manual triggering
+  workflow_dispatch: # This enables manual triggering of the workflow if needed
 
 jobs:
   tweet:
