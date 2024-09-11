@@ -15,7 +15,7 @@ jobs:
         pip install tweepy
     - name: run the bot
       run: |
-        python main.py
+        python tweet_countdown.py
       env:
         TWITTER_API_KEY : ${{ secrets.API_KEY }}
         TWITTER_API_SECRET_KEY : ${{ secrets.API_SECRET_KEY }}
