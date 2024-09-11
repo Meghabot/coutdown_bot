@@ -1,7 +1,7 @@
 name: Run bot
 on:
   schedule:
-    - cron: '27 18 * * *'  # Scheduled time (daily at 18:27 UTC)
+    - cron: '07 07 * * *'  # Scheduled time (daily at 18:27 UTC)
   workflow_dispatch:  # Allows manual triggering of the workflow
 jobs:
   build:
