@@ -1,7 +1,7 @@
 name: Run bot
 on:
   schedule:
-    - cron: '17 19 * * *'
+    - cron: '30 19 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
